@@ -128,3 +128,154 @@ a { color: inherit; text-decoration: none; }
 
 /* Theme Transition Class */
 html.is-switching-theme *, html.is-switching-theme *::before, html.is-switching-theme *::after { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, fill 0.3s ease !important; }
+
+/* ── Contact Page ────────────────────────── */
+.contact-section {
+    margin-bottom: 48px;
+}
+
+.contact-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    letter-spacing: -0.02em;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    background-color: var(--card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg);
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: all var(--transition);
+}
+
+.contact-card:hover .contact-icon {
+    color: var(--accent);
+    background-color: rgba(79, 142, 247, 0.08);
+}
+
+.contact-icon--instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    color: #fff;
+}
+
+.contact-card:hover .contact-icon--instagram {
+    background: linear-gradient(135deg, #9c4db8, #fd3d3d, #fdca5b);
+    transform: scale(1.05);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.contact-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.contact-value {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.contact-role {
+    font-size: 0.8125rem;
+    color: var(--accent);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    background-color: var(--bg);
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-top: 2px;
+}
+
+/* Highlight variant for founder */
+.contact-card--highlight {
+    border-color: var(--accent-dim);
+    background: linear-gradient(135deg, var(--card), rgba(79, 142, 247, 0.04));
+}
+
+.contact-card--highlight:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(79, 142, 247, 0.15);
+}
+
+/* Personal variant */
+.contact-card--personal {
+    opacity: 0.85;
+}
+
+.contact-card--personal:hover {
+    opacity: 1;
+}
+
+/* Responsive adjustments for contact */
+@media (max-width: 767px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        padding: 16px 20px;
+    }
+    
+    .contact-icon {
+        width: 42px;
+        height: 42px;
+    }
+}
